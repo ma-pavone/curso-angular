@@ -1,0 +1,30 @@
+<h5>  *ngIf </h5>
+
+#Recomendado para arvores de ifs maiores
+<br><br>
+
+<div *ngIf="cursos.length > 0"> Lista de cursos aqui: </div>
+
+<div *ngIf="cursos.length == 0"> Não existem cursos para serem listados. </div>
+
+
+<div *ngIf="mostrarCursos"> Lista de cursos aqui: </div>
+
+<div *ngIf="!mostrarCursos"> Não existem cursos para serem listados. </div>
+
+
+<h5> Hidden como alternativa </h5>
+
+#Recomendado para arvores de ifs pequenas / Problemas com segurança (somente alterar a propriedade no dev tools)
+<br><br>
+<div [hidden]="!mostrarCursos">
+  Lista de cursos exibidos aqui:
+</div>
+
+<div [hidden]="mostrarCursos">
+  Não existem cursos para serem exibidos.
+</div>
+
+
+<br><br>
+<button (click)="onMostrarCursos()"> Mostrar ou esconder cursos </button>

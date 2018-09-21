@@ -1,0 +1,68 @@
+  <section class="event-binding">
+
+    <article>
+
+
+      <h3>event binding</h3>
+
+    <div>
+
+        <button  (click)="botaoClicado()"
+        class="btn btn-primary" >Me Clique!</button>
+    <br> <br>
+
+    <input type="text"
+    (keyup)="onKeyUp($event)"
+    (keyup.enter)="salvarValor(campoInput.value)"
+    (blur)="salvarValor(campoInput.value)"
+    #campoInput  >
+
+    <p> Valor Atual:{{ valorAtual }}
+    <br>
+      Valor Salvo:{{ valorSalvo }}
+      </p>
+
+      <span
+      (mouseover)="onMouseOverOut()"
+      (mouseout)="onMouseOverOut()"
+      [class.highlight]="isMouseOver">
+      Passe o mouse
+      </span>
+    </div>
+
+  <h3> Two-way Data binding</h3>
+
+  <div>
+
+    <input type="text" [(ngModel)]="nome">
+    <p> Voce digitou o nome: {{nome}} </p>
+
+  <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade.</p>
+
+    <input type="text" [(ngModel)]="pessoa.nome">
+    <input type="text" [(ngModel)]="pessoa.idade">
+
+
+  </div>
+
+    </article>
+    </section>
+
+    <section class="input-output-properties">
+      <article>
+
+        <h3>Input/Output Properties</h3>
+
+          <br> <br>
+          <app-input-property [nome]="nomeDoCurso"></app-input-property>
+
+          <app-output-property [valor]= "valorInicial"
+            (mudouValor)="onMudouValor($event)">
+          </app-output-property>
+
+      </article>
+
+
+
+
+    </section>

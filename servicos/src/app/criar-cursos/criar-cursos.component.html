@@ -1,0 +1,13 @@
+<h5>Compartilhando um servico entre componentes</h5>
+
+
+
+<!-- <input #cursoInput type="text" (keyup.enter)="(onAddCurso(cursoInput.value, cursoInput.value = ''))"> -->
+<input #cursoInput type="text" (keyup.enter)="onAddCurso(cursoInput.value)">
+<!-- <Button (click)="(onAddCurso(cursoInput.value, cursoInput.value = ''))"> Add Curso</Button> -->
+<button (click)="onAddCurso(cursoInput.value)"> Add Curso </button>
+<ul>
+  <li *ngFor="let curso of cursos">
+    {{ curso }}
+  </li>
+</ul>

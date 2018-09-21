@@ -1,0 +1,58 @@
+<!-- ngClass -->
+
+<!-- <h1>
+  <i class="glyphicon"
+  [class.glyphicon-star-empty]="!ehmeufavorito"
+  [class.glyphicon-star]="ehmeufavorito"
+  (click)="onClick()">
+</i>
+</h1>
+
+<h1>
+  <i class="glyphicon"
+  [ngClass]="{
+    'glyphicon-star-empty': !ehmeufavorito,
+    'glyphicon-star' : ehmeufavorito
+  } "
+  (click)="onClick()">
+</i>
+</h1> -->
+
+
+<!-- ngStyle -->
+
+<!-- Metodo trabalhoso -->
+
+<h5>
+  <button
+  [style.backgroundColor]="ativo ? 'blue' : 'gray'"
+  [style.color]="ativo ? 'white' : 'black'"
+  [style.fontWeight]="ativo ? 'bold' : 'normal'"
+  [style.fontSize]="tamanhoFonte + 'px'"
+  >
+
+Mudar atributo 'ativo'
+</button>
+<br>
+<input type="text" [(ngModel)]="tamanhoFonte">
+</h5>
+
+
+<!-- Metodo simplificado ngStyle -->
+<h5>
+  <button
+  [ngStyle]=" {
+    'backgroundColor': ativo ? 'blue' : 'gray',
+    'color': ativo ? 'white' : 'black',
+    'fontWeight': ativo ? 'bold' : 'normal',
+    'fontSize': tamanhoFonte + 'px'
+  }"
+
+
+    (click)="mudarAtivo()"> <!-- Metodo para alterar o ativo true/false  // ativação -->
+
+Mudar atributo 'ativo'
+</button>
+<br>
+<input type="text" [(ngModel)]="tamanhoFonte">
+</h5>
